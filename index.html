@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitios Turísticos</title>
+    <link rel="icon" href="img/icon.ico">
+</head>
+<style>
+
+  body {
+  font-family: "Titulo";
+  color: rgb(0, 0, 0);
+  font-size: 1.45em; 
+  line-height: 1.2em;
+  padding-top:5em;
+  padding-left:10em;
+  padding-right:10em;
+  background-color: rgb(255, 255, 255);
+
+}
+
+@font-face {
+  font-family: 'Titulo1';
+  src: url(Letras1.ttf);
+
+}
+@font-face {
+  font-family: 'Titulo2';
+  src: url(Letras2.ttf);
+}
+@font-face {
+  font-family: 'Titulo3';
+  src: url(Letras3.ttf);
+}
+@font-face {
+  font-family: 'Titulo3';
+  src: url(Titulo.ttf);
+}
+.container {
+  width: 85%;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.header {
+  background: lightseagreen;
+  color: white;
+  padding: 2rem 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+}
+
+.header a {
+  color: white;
+  text-decoration: none;
+}
+
+.logo-nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  letter-spacing: 2px;
+  font-size: 1.3em;
+  font-family: 'Titulo'; 
+}
+
+.menu-icon {
+  display: none;
+}
+
+.navigation ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navigation ul li {
+  display: inline-block;
+}
+
+
+.navigation ul li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  transition: all 0.2s linear;
+  border-radius: 3px;
+}
+
+.navigation ul li a:hover {
+  background: rgb(94, 231, 135);
+}
+
+.main {
+  padding-top: 12rem;
+}
+
+.footer {
+  background: rgb(117, 194, 238);
+  padding: 4rem 0;
+  text-align: center;
+  margin-top: 6rem;
+}
+
+.fb{
+    color: blue;  
+}
+
+#Inicio {
+  line-height: 1.3em;
+  font-family: Titulo1;
+  text-align: left;
+  padding-top: 2em;
+}
+.FirstP{
+  font-family:"Letras3";
+}
+
+#Titulodelista {
+  font-weight: 800;
+}
+
+.Lista1 {
+  line-height: 1.4em;
+}
+
+#imgr{
+  float: right;
+   margin-left: 15px;
+  width:278px;
+  height:auto;
+
+}
+
+#imgl{
+  float: left;
+   margin-right: 28px;
+  width:auto;
+  height:200px;
+}
+
+#Textodelista{
+  font-weight:400;
+
+}
+
+#main-container{
+	margin: 150px auto;
+	width: 600px;
+}
+
+#Viajeros{ 
+  line-height: 1.3em;
+  font-family: Titulo1;
+  text-align: left;
+  padding-top: 2em;
+}
+
+#Acerca{
+  line-height: 1.3em;
+  font-family: Titulo1;
+  text-align: left;
+  padding-top: 2em;
+
+}
+
+#Acercap{
+
+  text-align: left;
+
+}
+
+table{
+	background-color: white;
+	text-align: center;
+  border-collapse: collapse;
+  position:static;
+ height: 100%;
+ margin:auto;
+}
+
+th, td{
+  padding-top: none;
+  padding-top:4px;
+  
+}
+
+thead{
+	background-color:lightseagreen;
+	border-bottom: solid 3px #0F362D;
+	color: black;
+}
+
+tr:nth-child(even){
+	background-color: #ddd;
+}
+
+tr:hover td{
+	background-color: #369681;
+	color: white;
+}
+
+#imgtabla{
+  height: 260px;
+  width: auto;
+}
+
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+#titulogaleria{
+  line-height: 1.3em;
+  font-family: Titulo1;
+  font-weight:600;
+}
+
+.galeria h1{
+    text-align: center;
+    margin:20px 0 15px 0;
+    font-weight: 300;
+}
+
+.linea{
+    border-top: 5px solid lightseagreen;
+    margin-bottom: 40px;
+}
+
+.contenedor-imagenes{
+    display:flex;
+    width: 85%;
+    margin: auto;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border-radius:3px;
+}
+
+.contenedor-imagenes .imagen{
+    width: 32%;
+    position: static;
+    height:250px;
+    margin-bottom:5px;
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .75)
+}
+.imagen img{
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+}
+
+.overlay{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background:rgba(0, 118, 192, 0.781) ;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    transition: .5s ease;
+}
+
+.overlay h2{
+    color: #fff;
+    font-weight: 300;
+    font-size:30px;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+.imagen:hover .overlay{
+    height:100%;
+    cursor: pointer;
+}
+
+@media screen and (max-width:1000px){
+    .contenedor-imagenes{
+        width: 95%;
+    }
+}
+
+@media screen and (max-width:700px){
+    .contenedor-imagenes{
+        width: 90%;
+    }
+    .contenedor-imagenes .imagen{
+        width: 48%;
+    }
+}
+
+@media screen and (max-width:450px){
+    h1{
+        font-size:22px;
+    }
+    .contenedor-imagenes{
+        width: 98%;
+    }
+    .contenedor-imagenes .imagen{
+        width: 80%;
+    }
+}
+
+
+ 
+</style>
+<body>
+    <header class="header">
+        <div class="container logo-nav-container">
+            <a href="#" class="logo">Aventureros por el Mundo</a>
+            <span class="menu-icon">Ver menú</span>
+            <nav class="navigation">
+                <ul class="show">
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#Viajeros">Viajeros</a></li>
+                    <li><a href="#titulogaleria">Imagenes</a></li>
+                    <li><a href="#Acerca">Acerca de</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <h1 id="Inicio">Razones para Viajar</h1>
+    <p class="FirstP">Hay quien considera el viajar una pérdida 
+      de tiempo y dinero, pues dejame decirte que no.
+      Al contrario, considero que es una de las mejores inversiones que podemos hacer.
+      Viajar nunca fue tan fácil y económico como ahora, y por muy ocupados 
+      que estemos siempre hay un hueco que podemos utilizar 
+      para un viaje. <br>Y si no encuentras ese hueco, entonces tienes un 
+      problema, pues no por estar más ocupado se es más productivo, más bien al
+      contrario, quien está muy ocupado casi siempre está siendo
+      poco productivo.
+      Por eso  mismo, hoy te compartire algunas razones para viajar más a menudo.
+    </p>  <br>
+    
+      <ol class="Lista1">
+      <li id="Titulodelista"> <span id="Titulodelista">Disfrutas de la Vida</span> <br>
+        <span id="Textodelista">Al viajar descubrimos y experimentamos nuevas cosas, las cuales muchas de ellas hacen que disfrutemos
+         de la vida de forma distinta a como estábamos habituados. No quiero decir que uno no disfrute de la vida 
+         cuando no está de viaje, o que se tenga que viajar para disfrutar de la vida, pero es cierto que cuando uno viaja
+         hace cosas que no suele hacer normalmente. Por ejemplo:
+         <img id="imgr" src="img/Disfrutar.png" alt="Hombre en un paisaje hermoso elevando las manos">
+        <ul>
+        <li>Descubrir y probar nuevos sabores y olores, sobre todo con la comida.</li>
+        <li>Disfrutar de paisajes diferentes a los conocidos, visitar lugares famosos y conocer la tradición de estos lugares.</li>
+        <li>Actividades al aire libre que no has hecho antes, y te gustan.</li>
+      </span>
+      </ul>
+        Cuando viajamos, como estamos en un sitio nuevo, el cual es posible que no volvamos a 
+        visitar en un largo tiempo, e incluso puede que nunca, nos “obligamos” a hacer muchas cosas, que de vivir 
+        en ese lugar seguramente no haríamos.
+        Además, cuando viajamos pasamos más rato en “modo contemplativo”, es decir, 
+        nos relajamos y experimentamos el momento a través de nuestros sentidos, lo cual 
+        nos hace disfrutar más de la experiencia.
+      </li> <br>
+
+      <li id="Titulodelista"><span id="Titulodelista">Valoras Más lo que Tienes</span><br>
+        <span id="Textodelista">Hasta que no dejas de tener algo no lo valoras en su justa medida.
+        Estar fuera de lo que llamaríamos casa, lejos de ciertas comodidades y de personas que queremos,
+          nos hace apreciarlas más a la vuelta.
+         Apreciar lo que se tiene es importante para ser más feliz.
+         Las personas tendemos a fijarnos y centrar nuestra atención en las cosas negativas 
+         que nos suceden, pero ¿y qué pasa con las cosas buenas? Están ahí, sólo hace falta que las aprecies.</span>
+      </li> <br>
+      <li id="Titulodelista"><span id="Titulodelista">Conoces Gente Nueva</span><br>
+        <span id="Textodelista">El ser humano es un animal social. Necesitamos entrar en contacto con otras personas.
+        Una cosa es viajar solo y otra bien distinta estar solo todo el rato sin hablar con nadie.
+        <img id="imgl" src="img/conocergente.png" alt="Personas levantando las manos y disfruntando de la vista">
+        Una de las cosas bonitas (y beneficiosas) de viajar es poder conocer a personas de otras 
+        culturas y mantener conversaciones sobre su visión de las cosas en general, o de cualquier tema 
+        que te interese conocer su opinión en particular. Pueden ser nativos del lugar u otros viajantes como tú.
+        Existen ciertos lugares que facilitan esos contactos. Por ejemplo, si atiendes a alguna clase o evento organizado
+        (por ejemplo, una conferencia o quedada de emprendedores, entre otros) 
+        las zonas comunes del hostal o de la residencia de estudiantes, algunos locales de copas o PUBs, etc.
+        La cuestión es poner de tu parte, ignorar la timidez y el miedo al rechazo e iniciar conversaciones.
+        Que pase lo que tenga que pasar. Al fin y al cabo estamos para disfrutar.
+        </span>
+      </li>
+    </ol> 
+    <br>
+
+
+    <h1 id="Viajeros" >Experiencias de Viajeros</h1>
+
+    <p>Aunque sigas creyendo que se necesita dinero para viajar, déjame decirte que no es necesario, justamente en nuestro país 
+      hay personas que dejaron sus empleos y demás para hacer este sueño, a continuación veremos quienes son:  </p>
+      <div id="main-container">
+
+        <table>
+          <thead>
+            <tr>
+              <th>Foto</th><th>Persona</th>
+            </tr>
+          </thead>
+    
+          <tr>
+            <td><img a href="instagram.com/travel_inhershoes" id="imgtabla"src="img/Aggie.png" alt="Mujer albina paseando a un caballo en un bosque"></td><td>Se llama Aggie, es polaca,
+              estudió en Australia y en 2013 decidió mudarse a Los Ángeles y cambiar de vida. En su perfil de Instagram 
+              carga sus fotografías, vídeos e historias viajeras por todo el mundo.</td>
+          </tr>
+          <tr>
+            <td><img a href="instagram.com/brooklynhawaii" target="_blank" id="imgtabla" src="img/Brooke.png" alt="Mujer albina paseando 
+              a un caballo con rienda."></td><td>Desde Hawaii, Brooke regala cada día a su legión de 'followers' unas sensuales y 
+              elegantes fotos de la playa y el surf. Una visión diferente del mar.  </td>
+          </tr>
+          <tr>
+            <td><img a href="instagram.com/brooklynhawaii" id="imgtabla" src="img/beto.png" alt="Hombre que esta estirando
+               la mano con confainza." </td>  <td>Beto es un palmirano que cuando acabo e estudiar se dejo llevar con
+                  su sueño y hoy en dia viaja y trabaja para el mismo. </td>
+          </tr>
+          <tr>
+            <td> <img href="instagram.com/brooklynhawaii" id="imgtabla" src="img/nomads.png" alt=""> </td> <td>Andres y Lina, los cuales hacen parte de este puesto, 
+              debido a que han dejado en buen lugar los lugares que visitan, además de que juntos han realizado un libro.
+            </td>
+          </tr>
+        </table>
+      </div>
+
+    <div class="galeria">
+      <h1  id="titulogaleria">Galeria de Imagenes</h1>
+      <div class="linea"></div>
+      <div class="contenedor-imagenes">
+          <div class="imagen">
+              <img src="img/1.png" alt="Imagen de dos personas en una antigua piramide">
+              <div class="overlay">
+                  <h2>IG:</h2>
+              </div>
+          </div>
+          <div class="imagen">
+              <img src="img/2.png" alt="Imagen de un hombre en un sitio popular en Australia">
+              <div class="overlay">
+                  <h2>Suscribete</h2>
+              </div>
+          </div>
+          <div class="imagen">
+              <img src="img/sitio5.png" alt="Imagen de la plaza de Cusco en Perú">
+              <div class="overlay">
+                  <h2></h2>
+              </div>
+          </div>
+          <div class="imagen">
+              <img src="img/4.png" alt="Imagen de dos personas sentadas en una terraza compartiendo ">
+              <div class="overlay">
+                  <h2></h2>
+              </div>
+          </div>
+          <div class="imagen">
+              <img src="img/sitio4.png" alt="Imagen de Juan famosa playa en Jamaica">
+              <div class="overlay">
+                  <h2></h2>
+              </div>
+          </div>
+          <div class="imagen">
+              <img src="img/6.png" alt="Imagen de dos personas paradas al borde de un muro">
+              <div class="overlay">
+                  <h2></h2>
+              </div>
+          </div>
+          <div class="imagen">
+              <img src="img/sitio3.png" alt="Imagen de Macgu Picchu">
+              <div class="overlay">
+                  <h2>/h2>
+              </div>
+          </div>
+          <div class="imagen">
+              <img src="img/8.png" alt="Imagen de una chica sentada al borde de una roca">
+              <div class="overlay">
+                  <h2></h2>
+              </div>
+          </div>
+          <div class="imagen">
+              <img src="img/barco.png" alt="Imagen de un barco en Oporto Portugal">
+              <div class="overlay">
+                  <h2></h2>
+              </div>
+            </div>
+                  <div class="imagen">
+                    <img src="img/sitio2.png" alt="Imagen de un tren en Lisboa">
+                    <div class="overlay">
+                        <h2></h2>
+                    </div>
+                </div>
+          <div class="imagen">
+              <img src="img/muralla.png" alt="Imagen de la Gran Muralla China">
+              <div class="overlay">
+                   <h2></h2>
+                  </div>
+
+<h1 id="Acerca"> Acerca de</h1>
+<p id="Acercap">Hola, soy un estudiante que le gusta aprender y poco a poco experimentar, en este caso, esta es una de mis 
+  primeras páginas  web, espero que te haya gustado.
+</p>
+</body>
+</html>
